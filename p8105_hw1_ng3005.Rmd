@@ -34,6 +34,15 @@ mean(early_january_weather$temp)
 
 Using the `mean()` function, the mean temperature in the dataset is 39.58212.
 
+Let's create a scatterplot of `temp` (y) vs `time_hour` (x)
+
+```{r}
+ggplot(
+  early_january_weather, 
+  aes(x = time_hour, y = temp, color = humid)) + geom_point()
+```
+
+Overall, this scatterplot shows an upward trend in temperature as time progresses. The points also seem to oscillate up and down in temperature likely fluctuating due to daytime and nighttime. There is also an apparent increase in humidity around Jan 12 to Jan 14. 
 
 
 
