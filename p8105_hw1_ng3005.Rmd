@@ -4,10 +4,37 @@ output: github_document
 date: "2025-09-18"
 ---
 
+## Problem 1
+
 ```{r}
 library(tidyverse)
 library(knitr)
+library(moderndive)
+data("early_january_weather")
 ```
+
+To write a short description of the dataset, we should visualize the first few rows
+
+```{r}
+head(early_january_weather)
+```
+
+This dataset contains 15 variables: 'origin', 'year', 'month', 'day', 'hour', 'temp', 'dewp', 'humid', 'wind_dir', 'wind_speed', 'wind_gust', 'precip', 'pressure', 'visib', and 'time_hour'
+
+```{r}
+nrow(early_january_weather)
+ncol(early_january_weather)
+```
+
+Using `nrow` and `ncol`, there are 358 rows and 15 columns in the dataset.
+
+```{r}
+mean(early_january_weather$temp)
+```
+
+Using the `mean()` function, the mean temperature in the dataset is 39.58212.
+
+
 
 
 ```{r setup, include=FALSE}
