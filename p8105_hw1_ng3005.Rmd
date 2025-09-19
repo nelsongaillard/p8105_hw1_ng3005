@@ -1,7 +1,7 @@
 ---
 title: "p8105_hw1_ng3005"
 output: github_document
-date: "2025-09-18"
+date: "September 20, 2025"
 ---
 
 ## Problem 1
@@ -13,7 +13,7 @@ library(moderndive)
 data("early_january_weather")
 ```
 
-To write a short description of the dataset, we should visualize the first few rows
+To write a short description of the dataset, we can visualize the first few rows
 
 ```{r}
 head(early_january_weather)
@@ -34,7 +34,7 @@ mean(early_january_weather$temp)
 
 Using the `mean()` function, the mean temperature in the dataset is 39.58212.
 
-Let's create a scatterplot of `temp` (y) vs `time_hour` (x)
+#### Let's create a scatterplot of `temp` (y) vs `time_hour` (x)
 
 ```{r}
 ggplot(
@@ -44,28 +44,28 @@ ggplot(
 
 Overall, this scatterplot shows an upward trend in temperature as time progresses. The points also seem to oscillate up and down in temperature likely fluctuating due to daytime and nighttime. There is also an apparent increase in humidity around Jan 12 to Jan 14. 
 
+#### Let's export the above scatterplot to the project directory
 
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r}
+ggsave("p8105_hw1_ng3005_scatter.pdf", height = 4, width = 6)
 ```
 
-## R Markdown
+## Problem 2
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+#### Create dataframe
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+```{r}
+hw1_df = tibble(
+  random_sample = rnorm(10),
+  vec_positive = random_sample > 0,
+  vec_char = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
+  vec_factor = factor(
+      rep(c("level_1", "level_2", "level_3"), length.out = 10),
+      levels = c("level_1", "level_2", "level_3")
+  )
+)
 
-```{r cars}
-summary(cars)
+hw1_df
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
