@@ -1,5 +1,7 @@
 ---
 title: "p8105_hw1_ng3005"
+author: "Nelson Gaillard"
+UNI: "ng3005"
 output: github_document
 date: "September 20, 2025"
 ---
@@ -10,6 +12,11 @@ date: "September 20, 2025"
 library(tidyverse)
 library(knitr)
 library(moderndive)
+```
+
+Load the dataset from the the moderndive library
+
+```{r}
 data("early_january_weather")
 ```
 
@@ -19,7 +26,9 @@ To write a short description of the dataset, we can visualize the first few rows
 head(early_january_weather)
 ```
 
-This dataset contains 15 variables: 'origin', 'year', 'month', 'day', 'hour', 'temp', 'dewp', 'humid', 'wind_dir', 'wind_speed', 'wind_gust', 'precip', 'pressure', 'visib', and 'time_hour'
+This dataset contains 15 variables: 'origin', 'year', 'month', 'day', 'hour', 'temp', 'dewp', 'humid', 'wind_dir', 'wind_speed', 'wind_gust', 'precip', 'pressure', 'visib', and 'time_hour'. It is important to note that the variable `origin` identifies the weather station from which each row's data was collected. Both `temp` and `dewp` (temperature and dewpoint) are in units of degrees Fahrenheit. `wind_dir` is in units of degrees. `wind_speed`, and `wind_gust` are in units of miles per hour (mph). `precip`, `pressure`, and `visib` are in units of inches, millibars, and miles, respectively. `time_hour` identifies the date and hour of the recording.
+
+Dataset `early_january_weather` contains `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns. The mean temperature in the dataset is `r mean(pull(early_january_weather, temp))` degrees Fahrenheit. 
 
 ```{r}
 nrow(early_january_weather)
@@ -68,4 +77,15 @@ hw1_df = tibble(
 hw1_df
 ```
 
+Let's try to take the mean of each variable
+
+```{r}
+mean(hw1_df $ random_sample)
+
+mean(hw1_df $ vec_positive)
+
+mean(hw1_df $ vec_char)
+
+mean(hw1_df $ vec_factor)
+```
 
