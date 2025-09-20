@@ -75,7 +75,7 @@ mean(pull(hw1_df, vec_char))
 mean(pull(hw1_df, vec_factor))
 ```
 
-The mean of the variable `random_sample` is `r mean(pull(hw1_df, random_sample`)), and the mean of the variable `vec_positive` is `r mean(pull(hw1_df, vec_positive))`.
+The mean of the variable `random_sample` is `r mean(pull(hw1_df, random_sample))`, and the mean of the variable `vec_positive` is `r mean(pull(hw1_df, vec_positive))`.
 
 We are unable to take the mean of the variables `vec_char` and `vec_factor`. 
 
