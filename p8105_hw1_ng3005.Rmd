@@ -78,3 +78,18 @@ mean(pull(hw1_df, vec_factor))
 The mean of the variable `random_sample` is `r mean(pull(hw1_df, random_sample`)), and the mean of the variable `vec_positive` is `r mean(pull(hw1_df, vec_positive))`.
 
 We are unable to take the mean of the variables `vec_char` and `vec_factor`. 
+
+#### Experimenting with `as.numeric`
+
+```{r, eval = FALSE}
+as.numeric(pull(hw1_df, vec_positive))
+as.numeric(pull(hw1_df, vec_char))
+as.numeric(pull(hw1_df, vec_factor))
+```
+
+The `as.numeric` function assigns characters to numeric values. As a result, we see that the variable `vec_positive` with output "values" of `TRUE` and `FALSE` now have output values of `1` and `2`. Similarly, the variable `vec_factor`, which contains 3 levels (`level_1`, `level_2`, `level_3`), now yields outputs `1`, `2`, and `3`, corresponding to each of the levels. On the other hand, the characters within `vec_char` have no numerical association in the same way that those in `vec_factor` do (thanks to the `factor()` function), so `as.numeric` is unable to translate `vec_char` into numeric values. 
+
+
+
+
+
